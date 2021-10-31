@@ -5,8 +5,13 @@ import { useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import useAuth from "../../../hooks/useAuth";
+import { Modal, Button } from "react-bootstrap";
 
 const OfferDetails = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
@@ -14,7 +19,8 @@ const OfferDetails = () => {
       .post("https://explore-wonderland.herokuapp.com/orders", data)
       .then((res) => {
         if (res.data.insertedId) {
-          alert("Order Placed Successfully");
+          // alert("Order Placed Successfully");
+          handleShow();
           reset();
         }
       });
@@ -120,6 +126,18 @@ const OfferDetails = () => {
           </div>
         </div>
       </div>
+      {/* Submit Alert modal  */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title className="text-success">Order Placed</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Nice! Successfully Placed Your Order</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };

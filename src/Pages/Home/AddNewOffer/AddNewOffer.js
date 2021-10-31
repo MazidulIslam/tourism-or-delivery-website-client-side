@@ -1,9 +1,14 @@
 import axios from "axios";
-import React from "react";
+import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "./AddNewOffer.css";
 
 const AddNewOffer = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
@@ -11,7 +16,8 @@ const AddNewOffer = () => {
       .post("https://explore-wonderland.herokuapp.com/offers", data)
       .then((res) => {
         if (res.data.insertedId) {
-          alert("added successfully");
+          handleShow();
+          // alert("added successfully");
           reset();
         }
       });
@@ -62,6 +68,18 @@ const AddNewOffer = () => {
         <br />
         <input type="submit" className="btn btn-success" />
       </form>
+      {/* Submit Alert modal  */}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title className="text-success">Added Offer</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Nice! Successfully Added New Offer</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
