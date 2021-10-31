@@ -6,7 +6,7 @@ import Gallery from "../Gallery/Gallery";
 const Galleries = () => {
   const [images, setImages] = useState([]);
   useEffect(() => {
-    const url = "gallery.json";
+    const url = "https://explore-wonderland.herokuapp.com/gallery";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setImages(data));
