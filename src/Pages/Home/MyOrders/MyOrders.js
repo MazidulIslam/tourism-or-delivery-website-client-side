@@ -23,17 +23,25 @@ const MyOrders = () => {
         You have{" "}
         <strong className="fw-bold text-danger">{orders.length}</strong> orders
       </h5>
-      <div className="m-3">
+      <div className="col-md-12 col-sm-12 m-3">
         {orders.map((order) => (
           <div
-            className="rounded shadow d-flex w-50 bg-warning p-3 m-3 mx-auto"
+            className="rounded shadow d-flex w-75 bg-warning mx-auto p-3 m-3 row"
             key={order._id}
             order={order}
           >
-            <h5>
+            {/* <h5>
               <strong>Order Id:</strong> {order._id}
               <strong>Place Name:</strong> {order.place}
-            </h5>
+            </h5> */}
+            <div className="col-md-6 col-sm-12 d-flex flex-column align-items-start mx-auto">
+              <h5>
+                <strong>Order Id:</strong> {order._id}
+              </h5>
+              <h5>
+                <strong>Place Name:</strong> {order.place}
+              </h5>
+            </div>
           </div>
         ))}
       </div>
