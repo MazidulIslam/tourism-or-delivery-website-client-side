@@ -12,6 +12,7 @@ const ManageAllOrders = () => {
   }, []);
 
   const handleDelete = (id) => {
+    alert("Are You sure you want to delete this?");
     const url = `https://explore-wonderland.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "DELETE",
