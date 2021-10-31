@@ -49,7 +49,7 @@ const ManageAllOrders = () => {
         {orders.map((order) => (
           <div key={order._id} order={order} className="col-sm-12 col-md-12">
             <div className="rounded shadow d-flex w-75 bg-warning mx-auto p-3 m-3 row">
-              <div className="col-md-12 col-sm-12 d-flex flex-column align-items-start mx-auto">
+              <div className="col-md-6 col-sm-12 d-flex flex-column align-items-start mx-auto">
                 <h5>
                   <strong>Order Id:</strong> {order._id}
                 </h5>
@@ -57,14 +57,14 @@ const ManageAllOrders = () => {
                   <strong>Place Name:</strong> {order.place}
                 </h5>
               </div>
-              <div className="col-sm-6 col-md-12 d-flex justify-content-center">
+              <div className="col-sm-12 col-md-6 d-flex my-auto justify-content-end">
                 {/* <button
                   onClick={() => handleDelete(order._id)}
                   className="btn btn-danger m-3"
                 >
                   Delete
                 </button> */}
-                <Button variant="danger" onClick={handleShow}>
+                <Button className="" variant="danger" onClick={handleShow}>
                   Delete
                 </Button>
                 <Modal show={show} onHide={handleClose}>
