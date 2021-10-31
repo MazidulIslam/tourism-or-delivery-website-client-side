@@ -5,14 +5,14 @@ import { useState } from "react";
 const ManageAllOrders = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/orders/`;
+    const url = `https://explore-wonderland.herokuapp.com/orders/`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://explore-wonderland.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "DELETE",
     })

@@ -24,9 +24,11 @@ const Header = () => {
         expand="lg"
       >
         <Container className="p-2">
-          <Navbar.Brand className="text-warning fw-bold fs-3" to="/home">
-            Explore Wonderland
-          </Navbar.Brand>
+          <Nav.Link as={HashLink} to="/home#home">
+            <Navbar.Brand className="text-warning fw-bold fs-3" to="/home">
+              Explore Wonderland
+            </Navbar.Brand>
+          </Nav.Link>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Nav>

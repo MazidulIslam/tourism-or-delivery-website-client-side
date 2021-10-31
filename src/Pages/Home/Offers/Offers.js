@@ -7,7 +7,7 @@ import Offer from "../Offer/Offer";
 const Offers = () => {
   const [offers, setOffers] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/offers`;
+    const url = `https://explore-wonderland.herokuapp.com/offers`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOffers(data));

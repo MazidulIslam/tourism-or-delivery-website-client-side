@@ -10,18 +10,20 @@ const OfferDetails = () => {
   const { user } = useAuth();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/orders", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Order Placed Successfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://explore-wonderland.herokuapp.com/orders", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Order Placed Successfully");
+          reset();
+        }
+      });
   };
   const { offerId } = useParams();
 
   const [offer, setOffer] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/offers/${offerId}`;
+    const url = `https://explore-wonderland.herokuapp.com/offers/${offerId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

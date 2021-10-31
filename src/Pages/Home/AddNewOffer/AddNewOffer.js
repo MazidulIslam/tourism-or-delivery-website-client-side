@@ -7,12 +7,14 @@ const AddNewOffer = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/offers", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("added successfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://explore-wonderland.herokuapp.com/offers", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("added successfully");
+          reset();
+        }
+      });
   };
   return (
     <div className="addOffer w-50 mx-auto m-5">

@@ -1,5 +1,7 @@
 import React from "react";
+import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -23,52 +25,65 @@ const Footer = () => {
                   aria-current="page"
                   to="/services"
                 >
-                  Service 4
+                  Special Activities
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-white" to="/services">
-                  Service 3
+                  Travel Arrangement
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-white" to="/services">
-                  Service 2
+                  Your Private Guide
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link text-white" to="/services">
-                  Service 1
+                  Location Manager
                 </Link>
               </li>
             </ul>
           </div>
           <div className="col-md-4 col-sm-12">
-            <h3>Quick Links</h3>
+            <h3>Footer Menu</h3>
             <ul className="nav flex-column">
               <li className="nav-item">
-                <Link
+                <Nav.Link
                   className="nav-link active text-white"
                   aria-current="page"
-                  to="/home"
+                  as={HashLink}
+                  to="/home#home"
                 >
                   Home
-                </Link>
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/services">
-                  Service
-                </Link>
+                <Nav.Link
+                  as={HashLink}
+                  className="nav-link text-white"
+                  to="/home#offers"
+                >
+                  Offers
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/therapists">
-                  Therapist
-                </Link>
+                <Nav.Link
+                  as={HashLink}
+                  className="nav-link text-white"
+                  to="/home#services"
+                >
+                  Our Services
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/login">
-                  Login
-                </Link>
+                <Nav.Link
+                  as={HashLink}
+                  className="nav-link text-white"
+                  to="/home#gallery"
+                >
+                  Gallery
+                </Nav.Link>
               </li>
             </ul>
           </div>

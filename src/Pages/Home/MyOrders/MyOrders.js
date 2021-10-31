@@ -7,7 +7,7 @@ const MyOrders = () => {
   const { user } = useAuth();
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/orders/`;
+    const url = `https://explore-wonderland.herokuapp.com/orders/`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
