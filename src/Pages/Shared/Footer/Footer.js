@@ -20,28 +20,40 @@ const Footer = () => {
             <h3>Our Services</h3>
             <ul className="nav flex-column">
               <li className="nav-item">
-                <Link
-                  className="nav-link active text-white"
-                  aria-current="page"
-                  to="/services"
+                <Nav.Link
+                  as={HashLink}
+                  className="nav-link text-white"
+                  to="/home#services"
                 >
                   Special Activities
-                </Link>
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/services">
+                <Nav.Link
+                  as={HashLink}
+                  className="nav-link text-white"
+                  to="/home#services"
+                >
                   Travel Arrangement
-                </Link>
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/services">
+                <Nav.Link
+                  as={HashLink}
+                  className="nav-link text-white"
+                  to="/home#services"
+                >
                   Your Private Guide
-                </Link>
+                </Nav.Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/services">
+                <Nav.Link
+                  as={HashLink}
+                  className="nav-link text-white"
+                  to="/home#services"
+                >
                   Location Manager
-                </Link>
+                </Nav.Link>
               </li>
             </ul>
           </div>
